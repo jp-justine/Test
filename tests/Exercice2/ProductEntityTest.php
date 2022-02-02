@@ -52,6 +52,10 @@ class ProductEntityTest extends TestCase
             $this->testNullable($property);
         }
 
+        if (!file_exists(__DIR__ . '/../../src/Repository/ProductRepository.php')) {
+            $this->fail('L\'entité Product n\'a pas de repository dans src/Repository');
+        }
+
         $this->assertTrue(true);
     }
 

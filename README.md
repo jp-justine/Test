@@ -28,7 +28,20 @@
      - "name", type : string, length : 255, non nullable
      - "priceHt", type : float, non nullable
      - "creationDate", type : datetime, non nullable
-     - "dateUpdate", type : datetime, non nullable
+     - "dateUpdate", type : datetime, nullable
 
 - Mettre a jour le .env avec vos connection mysql sans en créer d'autre
+
 - Lancer ./bin/phpunit tests/Exercice2 pour voir si l'exercice est réussi
+
+## Exercice 3 :
+
+- Créer le ProductController (Commande make interdite)
+- Créer la méthode index avec l'url correspondante : /product
+- Cette méthode doit comporter une requête visant à récupérer tous les produits
+- Faire en sorte que la méthode aille vers le template déjà créé dans templates/product/index.html.twig
+- Envoyer dans le template le resultat de la requête en nommant votre variable envoyée dans le front par : products
+- Rajouter le lien vers la page produit dans le header
+
+- Lancer ./bin/phpunit tests/Exercice2 pour voir si l'exercice est réussi
+

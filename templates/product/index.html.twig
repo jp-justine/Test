@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">Liste des produits</h1>
+
+   {# TODO : Modifier le lien vers les nouveaux produits ici      #}
+    <a href="#">
+        <button class="btn btn-primary">
+            Ajouter un produit
+        </button>
+    </a>
+
+    <table class="table table-light table-hover table-striped mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nom du produit</th>
+                <th scope="col">Prix HT</th>
+                <th scope="col">Prix TTC</th>
+                <th scope="col">Date de création</th>
+                <th scope="col">Date de mise à jour</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <th scope="col">
+                        {# TODO : Insérer le lien vers le edit ici #}
+                        {{ product.id }}
+                    </th>
+                    <th scope="col">{{ product.name }}</th>
+                    <th scope="col">{{ product.priceHt }}</th>
+                    <th scope="col">
+                {# TODO: Insérer le résultat TTC ici #}
+                    </th>
+                    <th scope="col">{{ product.dateCreation }}</th>
+                    <th scope="col">{{ product.dateUpdate }}</th>
+                {# TODO: Insérer liens vers l'edition sur le mot éditer #}
+                {# TODO: Insérer liens vers l'edition sur le mot supprimer #}
+                    <th scope="col">Editer / Supprimer</th>
+                </tr>
+            {% else %}
+                <tr>
+                    <th colspan="7" class="text-center">
+                        Pas de produits actuellement
+                    </th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
