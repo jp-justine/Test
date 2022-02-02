@@ -51,10 +51,10 @@ body {
 
   #line-oblic {
     width  : 150px;
-    height: 100vh;
+    height: 130vh;
     position : fixed;
     left: 50px;
-    top: 30px;
+    top: -60px;
     z-index: -2;
     background-color: $blue;
     transform: rotate(20deg);
