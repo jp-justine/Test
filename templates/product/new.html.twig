@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">Ajouter un produits</h1>
+
+    {# TODO : Modifier le lien vers la liste des produits ici  #}
+    <a href="#">
+        <button class="btn btn-primary">
+            Retour à la liste des produits
+        </button>
+    </a>
+
+    <div class="container mt-5">
+        {{ include('product/include/_form.html.twig') }}
+    </div>
+{% endblock %}

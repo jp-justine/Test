@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Tests\Exercice3;
+namespace App\Tests\Exercice4;
 
 use App\Controller\ProductController;
+use App\Form\ProductType;
 use Exception;
 use ReflectionClass;
 use ReflectionMethod;
@@ -24,9 +25,9 @@ class ProductControllerTest extends WebTestCase
 
         self::ensureKernelShutdown();
         $client = self::createClient();
-        $client->request('GET', '/product');
+        $client->request('GET', '/product/new');
 
-        $this->assertTrue($client->getResponse()->isSuccessful(), 'La route /product ne fonctionne pas');
+        $this->assertTrue($client->getResponse()->isSuccessful(), 'La route /product/new ne fonctionne pas');
     }
 
     /**
@@ -38,12 +39,8 @@ class ProductControllerTest extends WebTestCase
 
         $productController = new ReflectionClass(ProductController::class);
 
-        $indexMethod = $this->testIndexMethodCreated($productController);
-        $this->testPublic($indexMethod);
-
-        $productControllerContent = file_get_contents(__DIR__ . '/../../src/Controller/ProductController.php');
-
-        $this->testProductsIsSend($productControllerContent);
+        $newMethod = $this->testNewMethodCreated($productController);
+        $this->testPublic($newMethod);
 
         $this->assertTrue(true);
     }
@@ -63,40 +60,38 @@ class ProductControllerTest extends WebTestCase
      *
      * @return ReflectionMethod
      */
-    private function testIndexMethodCreated(ReflectionClass $productController): ReflectionMethod
+    private function testNewMethodCreated(ReflectionClass $productController): ReflectionMethod
     {
         try {
-            $indexMethod = $productController->getMethod('index');
+            $newMethod = $productController->getMethod('new');
         } catch (Exception $exception) {
-            $this->fail('Il n\'a pas de méthode nommée "index" dans le ProductController');
+            $this->fail('Il n\'a pas de méthode nommée "new" dans le ProductController');
         }
 
-        return $indexMethod;
+        return $newMethod;
     }
 
     /**
-     * @param ReflectionMethod $indexMethod
+     * @param ReflectionMethod $newMethod
      *
      * @return void
      */
-    private function testPublic(ReflectionMethod $indexMethod): void
+    private function testPublic(ReflectionMethod $newMethod): void
     {
-        if ($indexMethod->getModifiers() !== 1) {
+        if ($newMethod->getModifiers() !== 1) {
             $this->fail('Les méthodes des controllers doivent être public.');
         }
     }
 
     /**
-     * @param string $productControllerContent
-     *
      * @return void
      */
-    private function testProductsIsSend(string $productControllerContent): void
+    public function testForm(): void
     {
-        if (!is_int(strpos($productControllerContent, 'products'))
-            && strpos($productControllerContent, 'products') !== 0)
-        {
-            $this->fail('Il n\'y a pas de \'products\' (simples quotes) retournés vers le front');
+        if (!file_exists(__DIR__ . '/../../src/Form/ProductType.php')) {
+            $this->fail('Le formulaire ProductType n\'est pas présent dans src/Form');
         }
+
+        $this->assertTrue(true);
     }
 }
