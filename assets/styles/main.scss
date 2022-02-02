@@ -1,0 +1,74 @@
+body {
+  background-color: $white;
+  font-family: $negocianFont;
+  font-weight: 600;
+
+  //NAVBAR
+  nav {
+    border-bottom: 3px solid $red;
+    background-color: $white;
+
+    .nav-link {
+      color: $black;
+
+      &:hover {
+        color: $black;
+        border-bottom: 3px solid $red;
+      }
+    }
+  }
+
+  //GENERAL
+  .main {
+    min-height: 85vh;
+
+    h1 {
+      font-size: 50px;
+      text-transform: capitalize;
+      font-weight: 700;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+
+    h2, h3 {
+      font-size: 34px;
+      text-transform: capitalize;
+      font-weight: 700;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+  }
+
+  //DECO
+  #line {
+    width: 100vw;
+    height: 50px;
+    background-color: $red;
+    position: fixed;
+    top: 140px;
+    z-index: -1;
+  }
+
+  #line-oblic {
+    width  : 150px;
+    height: 100vh;
+    position : fixed;
+    left: 50px;
+    top: 30px;
+    z-index: -2;
+    background-color: $blue;
+    transform: rotate(20deg);
+    opacity: 30%;
+  }
+
+  #circle {
+    width: 200px;
+    height: 600px;
+    background-color: $red;
+    z-index: -1;
+    position: fixed;
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(20deg);
+  }
+}
