@@ -2,7 +2,6 @@
 
 namespace App\Tests\Exercice2;
 
-use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
