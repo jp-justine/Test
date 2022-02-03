@@ -37,6 +37,9 @@
         <li>
             L'objectif final est de posséder un site <span class="red">100% fonctionnel.</span>
         </li>
+        <li>
+            Un <span class="red">commit initial</span> est demandé puis, un <span class="red">commit à la fin de chaque exercice</span> et enfin, un <span class="red">commit final</span>.
+        </li>
     </ol>
 </div>
 </div>
@@ -60,6 +63,7 @@
         <ol class="text-justify">
             <li>Faire un <span class="red">Fork</span> du projet</li>
             <li> Puis, un <span class="red">git clone</span></li>
+            <li> Puis, <span class="red">changer le remote url</span> . Le push directement sur la branche distante peut être <span class="red">éliminatoire</span>. Car semblable à une mise en down d'un site.</li>
             <li> Lancer <span class="red">composer install</span>.</li>
             <li> Faire un <span class="red">yarn install</span></li>
             <li> Puis <span class="red">yarn encore dev</span></li>
