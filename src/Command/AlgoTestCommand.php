@@ -141,7 +141,7 @@ class AlgoTestCommand extends Command
         try {
             $algo = $algo->getMethod('algo' . $stringNumberAlgo);
         } catch (Exception $exception) {
-            $io->error('Il n\'a pas de méthode nommée "algo' . $stringNumberAlgo . '" dans le ProductController');
+            $io->error('Il n\'a pas de méthode nommée "algo' . $stringNumberAlgo . '" dans ' . $algo->name);
             exit();
         }
 
