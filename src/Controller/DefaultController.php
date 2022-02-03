@@ -29,4 +29,14 @@ class DefaultController extends AbstractController
             'readmeFile' => file_get_contents($readMeFile),
         ]);
     }
+
+    /**
+     * @Route("algorithme", name="_algo")
+     *
+     * @return Response
+     */
+    public function algo(): Response
+    {
+        return $this->render('algo.html.twig');
+    }
 }

@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Algorithme :</h1>
+
+    <div class="accordion" id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                    >
+                        Premier algorithme :
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <ul class="text-justify">
+                        <li>
+                            Pour résoudre cet exercice vous devez tout d'abord aller dans le dossier
+                            <span class="red">src/Services</span> et ouvrir <span class="red">AlgorithmeService</span>
+                        </li>
+                        <li>
+                            Créer une methode <span class="red">algoFirst</span> dans laquelle vous resoudrez le
+                            problème suivant :
+                        </li>
+                        <li>
+                            Il faut que le service puisse accepter en entrée <span class="red">le paramètre</span>
+                            suivant :
+                        </li>
+                        <li>
+                            Un <span class="red">tableau</span> :
+                        </li>
+                    </ul>
+
+                    <code>
+                        <br />
+                        [
+                        <br />
+                        <span style="margin-left: 40px">Un integer inconnu, (exemple : -8)</span>
+                        <br />
+                        <span style="margin-left: 40px">Un autre integer inconnu, (exemple : 81)</span>
+                        <br />
+                        <span style="margin-left: 40px">Un autre integer inconnu, (exemple : 0)</span>
+                        <br />
+                        <span style="margin-left: 40px">...</span>
+                        <br />
+                        ]
+                        <br />
+                    </code>
+
+                    <ul>
+                        <li>
+                            <span class="red">Le nombre d'entrée dans le tableau est inconnu.</span>
+                        </li>
+                        <li>
+                            Si le nombre d'entrée est <span class="red">inférieur à 3</span>, le service doit <span class="red">retourner une string disant : Invalid</span>
+                        </li>
+                        <li>
+                            Les valeurs peuvent etre négatives, positives ou égales à zéro.
+                        </li>
+                        <li>
+                            Votre service doit pouvoir permettre de <span class="red">mettre les trois plus grandes valeurs dans l'ordre</span> de la façon suivante :
+                        </li>
+                    </ul>
+
+                    <code>
+                        <br />
+                        [
+                        <br />
+                        <span style="margin-left: 40px">1 => La plus grande valeur,</span>
+                        <br />
+                        <span style="margin-left: 40px">2 => La seconde plus grande valeur,</span>
+                        <br />
+                        <span style="margin-left: 40px">3 => La troisème plus grande valeur</span>
+                        <br />
+                        ]
+                        <br />
+                    </code>
+
+                    <br />
+                    Une fois l'aglo résolu, lancer la commande <span class="red">php bin/console algo:result</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                    >
+                        Second algorithme :
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <ul class="text-justify">
+                        <li>
+                            Créer une methode <span class="red">algoSecond</span> dans le AlgorithmeService pour
+                            résoudre le problème suivant :
+                        </li>
+                        <li>
+                            Créer un algo qui permet de <span class="red">mettre dans un tableau les valeurs 0 à 10
+                            </span> sans utiliser un seul <span class="red">chiffre ou nombre</span> dans le service.
+                        </li>
+                        <li>
+                            Si il y a un numéric, votre algorithme n'est pas valable.
+                        </li>
+                        <li>
+                            Le résultat final doit ressemble à ceci :
+                        </li>
+                    </ul>
+
+                    <code>
+                        <br />
+                        [
+                        <br />
+                        <span style="margin-left: 40px">0 => 0</span>
+                        <br />
+                        <span style="margin-left: 40px">1 => 1</span>
+                        <br />
+                        <span style="margin-left: 40px">2 => 2</span>
+                        <br />
+                        <span style="margin-left: 40px">3 => 3</span>
+                        <br />
+                        <span style="margin-left: 40px">4 => 4</span>
+                        <br />
+                        <span style="margin-left: 40px">5 => 5</span>
+                        <br />
+                        <span style="margin-left: 40px">6 => 6</span>
+                        <br />
+                        <span style="margin-left: 40px">7 => 7</span>
+                        <br />
+                        <span style="margin-left: 40px">8 => 8</span>
+                        <br />
+                        <span style="margin-left: 40px">9 => 9</span>
+                        <br />
+                        <span style="margin-left: 40px">10 => 10</span>
+                        <br />
+                        ]
+                        <br />
+                    </code>
+                    <br />
+                    Une fois l'aglo résolu, lancer la commande <span class="red">php bin/console algo:result</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
