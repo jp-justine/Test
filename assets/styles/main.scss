@@ -30,12 +30,17 @@ body {
       margin-bottom: 40px;
     }
 
-    h2, h3 {
+    h2, h3, .btn-link {
       font-size: 34px;
       text-transform: capitalize;
       font-weight: 700;
       text-decoration: underline;
       margin-bottom: 20px;
+      color: $black;
+    }
+
+    .red {
+      color: $red;
     }
   }
 
@@ -63,11 +68,11 @@ body {
 
   #circle {
     width: 200px;
-    height: 600px;
+    height: 150vh;
     background-color: $red;
     z-index: -1;
     position: fixed;
-    bottom: -50px;
+    bottom: -100px;
     right: -50px;
     transform: rotate(20deg);
   }
